@@ -123,7 +123,7 @@ public class EsArray1 {
         mat[2][2] = 0;
         mat[2][3] = 7;
         
-        mat[3][0] = 4;
+        mat[3][0] = 4; 
         mat[3][1] = 6;
         mat[3][2] = 7;
         mat[3][3] = 0;
@@ -147,11 +147,28 @@ public class EsArray1 {
          }
 
         boolean uguali = Arrays.equals(arr_sup, arr_inf);
-
+        
         if (uguali) {
             System.out.println("La matrice e' simmetrica!!");
         } else {
             System.out.println("La matrice NON e' simmetrica!!");
         }
+
+ // Altro metodo più veloce, controllo uguaglianza tra righe e colonne
+         uguali = true;
+         for (int r = 0; r < mat.length; r++) {
+             for (int c = 0; c < mat.length; c++) {
+                 if (mat[r][c] !=  mat[c][r]) {
+                    uguali = false;
+                 }
+             }
+         }
+         
+        if (uguali) {
+            System.out.println("La matrice e' simmetrica!!");
+        } else {
+            System.out.println("La matrice NON e' simmetrica!!");
+        }         
+        
     }
 }
